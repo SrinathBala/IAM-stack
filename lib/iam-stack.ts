@@ -1,16 +1,34 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import * as iam from 'aws-cdk-lib/aws-iam';
+import { ManagedPolicy } from 'aws-cdk-lib/aws-iam';
 
 export class IamStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    const lambdapolicy = new iam.PolicyDocument({
+      statements: [
+        new iam.PolicyStatement({
+          resources: ['*'],
+          actions: [
+            'logs:CreateLogGroup',
+            'logs:CreateLogStream',
+            'logs:PutLogEvents',
+            ],   
+            effect: iam.Effect.ALLOW,
+          })
+        ]
+    });
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'IamQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    const roleforlambda = new iam.Role(this, 'example-iam-role', {
+      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
+      roleName: 'Lambdarole', 
+      description: 'An example IAM role in AWS CDK',
+      inlinePolicies: {
+        FilterLogEvents: lambdapolicy,
+      },
+    });
+ 
   }
 }
