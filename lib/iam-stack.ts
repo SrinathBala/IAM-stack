@@ -9,7 +9,7 @@ export class IamStack extends cdk.Stack {
     
     const Rolename = new cdk.CfnParameter(this, 'Rolename', {
       type: 'String',
-      default: '${process.env.ROLE_NAME}',
+      default: ${process.env.ROLE_NAME},
       description: 'The name of the Role',
     });
 
