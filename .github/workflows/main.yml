@@ -1,5 +1,4 @@
-on: 
-  push:
+on: push
 
 env:
   ROLE_NAME: ${{ secrets.ROLE_NAME }}
