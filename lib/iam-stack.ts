@@ -6,6 +6,12 @@ import { ManagedPolicy } from 'aws-cdk-lib/aws-iam';
 export class IamStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
+    
+    const Rolename = new cdk.CfnParameter(this, 'QueueName', {
+      type: 'String',
+      default: 'RetryQueue',
+      description: 'The name of the SQS Queue',
+    });
 
     const lambdapolicy = new iam.PolicyDocument({
       statements: [
@@ -23,7 +29,7 @@ export class IamStack extends cdk.Stack {
 
     const roleforlambda = new iam.Role(this, 'example-iam-role', {
       assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
-      roleName: 'Lambdarole', 
+      roleName: Rolename.valueAsString, 
       description: 'An example IAM role in AWS CDK',
       inlinePolicies: {
         FilterLogEvents: lambdapolicy,
