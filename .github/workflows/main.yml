@@ -19,6 +19,9 @@ jobs:
           aws-region: 'us-east-1'
       - name: Install dependencies
         run: yarn
+        env:
+          CI: true
+          ROLE_NAME: ${{ secrets.ROLE_NAME }}
       - name: Synth stack
         run: yarn cdk synth
       - name: Deploy stack
