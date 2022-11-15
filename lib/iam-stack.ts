@@ -7,10 +7,10 @@ export class IamStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
     
-    const Rolename = new cdk.CfnParameter(this, 'QueueName', {
+    const Rolename = new cdk.CfnParameter(this, 'Rolename', {
       type: 'String',
-      default: 'RetryQueue',
-      description: 'The name of the SQS Queue',
+      default: process.env.ROLE_NAME,
+      description: 'The name of the Role',
     });
 
     const lambdapolicy = new iam.PolicyDocument({
