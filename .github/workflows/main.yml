@@ -30,5 +30,7 @@ jobs:
         run: yarn
       - name: Synth stack
         run: yarn cdk synth
+      - name: cdk bootstrap
+        run: cdk bootstrap
       - name: Deploy stack
         run: yarn cdk deploy --all --require-approval never
