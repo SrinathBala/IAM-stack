@@ -28,11 +28,7 @@ jobs:
           aws-region: us-east-1
       - name: Install dependencies
         run: yarn
-      - name: install cdk
-        run: npm install aws-cdk-lib
       - name: Synth stack
         run: yarn cdk synth
-      - name: cdk bootstrap
-        run: cdk bootstrap aws://209185650497/us-east-1
       - name: Deploy stack
         run: yarn cdk deploy --all --require-approval never
