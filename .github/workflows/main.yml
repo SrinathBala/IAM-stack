@@ -31,6 +31,6 @@ jobs:
       - name: Synth stack
         run: yarn cdk synth
       - name: cdk bootstrap
-        run: cdk bootstrap
+        run: cdk bootstrap aws://209185650497/us-east-1
       - name: Deploy stack
         run: yarn cdk deploy --all --require-approval never
