@@ -21,10 +21,6 @@ jobs:
           aws-region: 'us-east-1'
       - name: Install dependencies
         run: yarn
-      - uses: oNaiPs/secrets-to-env-action@v1
-        with:
-          secrets: ${{ toJSON(secrets) }}
-      - run: node -e "console.log(process.env.ROLE_NAME)"
       - name: Synth stack
         run: yarn cdk synth
       - name: Deploy stack
