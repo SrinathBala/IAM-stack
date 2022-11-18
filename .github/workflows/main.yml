@@ -17,9 +17,9 @@ on:
         default: ''
         type: choice
         options:
-        - BRANDS_AWS_OIDC_ROLE_ARN
+        - BRANDS
 env:
-  AWS_OIDC_ROLE_ARN: ${{ github.event.inputs.Account }}
+  AWS_OIDC_ROLE_ARN: ${{ github.event.inputs.Account }}_AWS_OIDC_ROLE_ARN
 permissions:
   id-token: write
   contents: read
