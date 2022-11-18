@@ -45,7 +45,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam:::role/ExampleGithubRole
+          role-to-assume: ${{ secrets.${{ github.event.inputs.Account }}_AWS_OIDC_ROLE_ARN }}
           aws-region: es-east-1
 
       - name: Deploy stack
