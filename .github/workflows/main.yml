@@ -44,7 +44,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{ secrets[format('{0}_A', github.event.inputs.Account)] }}
+          role-to-assume: ${{ secrets.[format('{0}_A', github.event.inputs.Account)] }}
           aws-region: us-east-1
 
       - name: Deploy stack
