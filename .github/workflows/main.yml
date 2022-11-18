@@ -18,6 +18,8 @@ on:
         type: choice
         options:
         - BRANDS_AWS_OIDC_ROLE_ARN
+env:
+  AWS_OIDC_ROLE_ARN: ${{ github.event.inputs.Account }}
 permissions:
   id-token: write
   contents: read
@@ -45,7 +47,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{ secrets[format('{0}_A', github.event.inputs.Account)] }}
+          role-to-assume: ${{ secrets[env.AWS_OIDC_ROLE_ARN] }}
           aws-region: us-east-1
 
       - name: Deploy stack
