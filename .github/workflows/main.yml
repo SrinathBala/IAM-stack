@@ -1,36 +1,52 @@
-on: push
-
-env:
-  ROLE_NAME: ${{ secrets.ROLE_NAME }}
-
-
+name: DMS Stack
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose the Env'
+        required: true
+        default: ''
+        type: choice
+        options:
+        - dev
+        - stage
+        - prod
+      Account:
+        description: 'Choose the Account'
+        required: true
+        default: ''
+        type: choice
+        options:
+        - BRANDS   
+permissions:
+  id-token: write
+  contents: read
+  
 jobs:
-  aws_cdk:
+  DeployStacks:
+
+    environment:
+      name: ${{ github.event.inputs.environment }}
+
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - name: Install dependencies
+
+      - name: Install Dependiencies
         run: yarn
-      - name: Synth stack
-        run: yarn cdk synth
-      - name: Configure AWS credentials from Test account
+
+
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::128680359488:role/ExampleGithubRole
-          aws-region: us-east-1
-      - name: Deploy stack
-        run: yarn cdk deploy --all --require-approval never
-      - name: Configure AWS credentials from Test account
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          role-to-assume: arn:aws:iam::209185650497:role/ExampleGithubRole
-          aws-region: us-east-1
+          aws-region: es-east-1
+
       - name: Deploy stack
         run: yarn cdk deploy --all --require-approval never
