@@ -17,7 +17,7 @@ on:
         default: ''
         type: choice
         options:
-        - BRANDS__AWS_OIDC_ROLE_ARN
+        - BRANDS_AWS_OIDC_ROLE_ARN
 permissions:
   id-token: write
   contents: read
