@@ -17,7 +17,7 @@ on:
         default: ''
         type: choice
         options:
-        - BRANDS   
+        - BRANDS_AWS_OIDC_ROLE_ARN
 permissions:
   id-token: write
   contents: read
@@ -45,7 +45,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: ${{ secrets[format('{0}_A', github.event.inputs.Account)] }}
-          aws-region: es-east-1
+          aws-region: us-east-1
 
       - name: Deploy stack
         run: yarn cdk deploy --all --require-approval never
