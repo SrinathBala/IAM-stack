@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/SrinathBala/IAM-stack/DMS%20Stack?style=flat-square)
+https://img.shields.io/github/workflow/status/SrinathBala/IAM-stack/DMS%20Stack?style=plastic
 # Welcome to your CDK TypeScript project
 
 This is a blank project for CDK development with TypeScript.
