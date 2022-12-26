@@ -1,5 +1,6 @@
 [![Actions](https://github.com/SrinathBala/IAM-stack/actions/workflows/main.yml/badge.svg)](https://github.com/SrinathBala/IAM-stack/actions)
 ![GitHub top language](https://img.shields.io/github/languages/top/SrinathBala/IAM-stack)
+![Branches](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/SrinathBala/IAM-stack/main/.github/badges/branches.json?raw=true)
 
 This is a blank project for CDK development with TypeScript.
 
