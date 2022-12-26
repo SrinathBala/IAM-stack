@@ -1,7 +1,6 @@
 # Shield testing
 [![Actions](https://github.com/SrinathBala/IAM-stack/actions/workflows/main.yml/badge.svg)](https://github.com/SrinathBala/IAM-stack/actions)
-![Branches](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/SrinathBala/IAM-stack/main/.github/badges/jacoco.json)
-
+![GitHub top language](https://img.shields.io/github/languages/top/SrinathBala/IAM-stack) |
 
 This is a blank project for CDK development with TypeScript.
 
