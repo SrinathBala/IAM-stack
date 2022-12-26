@@ -1,4 +1,3 @@
-# Shield testing
 [![Actions](https://github.com/SrinathBala/IAM-stack/actions/workflows/main.yml/badge.svg)](https://github.com/SrinathBala/IAM-stack/actions)
 ![GitHub top language](https://img.shields.io/github/languages/top/SrinathBala/IAM-stack)
 
