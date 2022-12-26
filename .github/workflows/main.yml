@@ -46,6 +46,8 @@ jobs:
         with:
           jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
           badges-directory: build/reports/jacoco/test/html/badges
+          generate-branches-badge: true
+          branches-badge-filename: branches.svg
           
       - name: Publish coverage report to GitHub Pages
         if: ${{ github.ref == 'refs/heads/master' }}
