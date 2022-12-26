@@ -1,7 +1,7 @@
 [![Actions](https://github.com/SrinathBala/IAM-stack/actions/workflows/main.yml/badge.svg)](https://github.com/SrinathBala/IAM-stack/actions)
 ![GitHub top language](https://img.shields.io/github/languages/top/SrinathBala/IAM-stack?raw=true)
 ![Branches](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/SrinathBala/IAM-stack/main/.github/badges/branches.json?raw=true)
-[![Snyk security score](https://snyk-widget.herokuapp.com/badge/pip/jacoco-badge-generator/badge.svg)](https://snyk.io/vuln/pip%3Ajacoco-badge-generator)
+[![Snyk security score](https://snyk-widget.herokuapp.com/badge/pip/IAM-stack/badge.svg)](https://snyk.io/vuln/pip%3Ajacoco-badge-generator)
 
 This is a blank project for CDK development with TypeScript.
 
