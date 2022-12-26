@@ -1,5 +1,5 @@
 # Shield testing
-[![Actions](https://github.com/SrinathBala/IAM-stack/workflows/dmsstack/badge.svg)](https://github.com/SrinathBala/IAM-stack/Actions)
+[![Actions](https://github.com/SrinathBala/IAM-stack/actions/workflows/main.yml/badge.svg)](https://github.com/SrinathBala/IAM-stack/actions)
 <img src="https://img.shields.io/youtube/channel/subscribers/UCzdX32OIhpfrdxQRhN2s98w?style=flat&logo=Github"></img>
 <img src="https://img.shields.io/badge/Size-4.4kb-ff0000?style=flat&logo=Github"></img>
 <img src="https://img.shields.io/badge/Production-Dev-ff0000?style=flat&logo=Github"></img>
