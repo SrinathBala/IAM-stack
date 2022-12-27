@@ -3,7 +3,7 @@
 ![Branches](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/SrinathBala/IAM-stack/main/.github/badges/branches.json?raw=true)
 [![Snyk security score](https://snyk-widget.herokuapp.com/badge/pip/jacoco-badge-generator/badge.svg)](https://snyk.io/vuln/pip%3AIAM-stack)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/SrinathBala/IAM-stack?label=Marketplace&logo=GitHub)](https://github.com/marketplace/actions/IAM-stack)
-[![Count of Action Users](https://badgen.net/github/dependents-repo/SrinathBala/IAM-stack?icon=github&label=used%20by)](https://github.com/SrinathBala/IAM-stack/network/dependents)
+
 
 This is a blank project for CDK development with TypeScript.
 
