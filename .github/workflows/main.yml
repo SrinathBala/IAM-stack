@@ -43,6 +43,3 @@ jobs:
 
       - name: Synth stack
         run: yarn cdk synth --all --require-approval never
-      
-      - name: Deploy stack
-        run: yarn cdk deploy --all --require-approval never
