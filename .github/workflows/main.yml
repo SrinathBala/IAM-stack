@@ -18,17 +18,12 @@ on:
         type: choice
         options:
         - BRANDS
-env:
-  AWS_OIDC_ROLE_ARN: ${{ github.event.inputs.Account }}_AWS_OIDC_ROLE_ARN
 permissions:
   id-token: write
   contents: read
   
 jobs:
   DeployStacks:
-
-    environment:
-      name: ${{ github.event.inputs.environment }}
 
     runs-on: ubuntu-latest
     steps:
@@ -40,20 +35,7 @@ jobs:
         with:
           node-version: "14"
           
-      - name: Generate JaCoCo Badge
-        if: ${{ github.ref == 'refs/heads/master' }}
-        uses: cicirello/jacoco-badge-generator@v2
-        with:
-          jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
-          badges-directory: build/reports/jacoco/test/html/badges
-          generate-branches-badge: true
-          branches-badge-filename: branches.svg
-          
-      - name: Publish coverage report to GitHub Pages
-        if: ${{ github.ref == 'refs/heads/master' }}
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build/reports/jacoco/test/html
+      
           
 
       - name: Install Dependiencies
