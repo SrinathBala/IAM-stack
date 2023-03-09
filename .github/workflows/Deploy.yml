@@ -6,7 +6,7 @@ on:
     types: 
       - completed
     jobs:
-      - if: ${{ success(Synth) }}    
+      - if: ${{ success() }}    
 
 permissions:
   id-token: write
