@@ -9,6 +9,8 @@ jobs:
   test_workflow:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps: 
+      - run: echo "success"
   DeployStacks:
 
     runs-on: ubuntu-latest
