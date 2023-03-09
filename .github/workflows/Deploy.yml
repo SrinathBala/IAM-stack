@@ -6,7 +6,7 @@ on:
     types: 
       - completed
     jobs:
-      - DeployStacks.result: success
+      - if: ${{ success(Synth) }}    
 
 permissions:
   id-token: write
