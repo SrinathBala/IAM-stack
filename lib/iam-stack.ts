@@ -7,6 +7,7 @@ export class IamStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
     
+    
     const Rolename = new cdk.CfnParameter(this, 'Rolename', {
       type: 'String',
       default: process.env.ROLE_NAME,
