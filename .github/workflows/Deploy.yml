@@ -5,14 +5,14 @@ on:
     branches: [main]
     types: 
       - completed
-    jobs:
-      - DeployStacks.result: success
     
 permissions:
   id-token: write
   contents: read
   
 jobs:
+  test_workflow:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
   Deploy:
 
     runs-on: ubuntu-latest
