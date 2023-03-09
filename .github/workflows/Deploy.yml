@@ -1,23 +1,9 @@
-name: DMS Stack
+name: Deploy
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Choose the Env'
-        required: true
-        default: ''
-        type: choice
-        options:
-        - dev
-        - stage
-        - prod
-      Account:
-        description: 'Choose the Account'
-        required: true
-        default: ''
-        type: choice
-        options:
-        - BRANDS
+  workflow_run:
+    workflows: ["Synth"]
+    branches:
+      - main
 permissions:
   id-token: write
   contents: read
@@ -34,9 +20,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14"
-          
-      
-          
 
       - name: Install Dependiencies
         run: yarn
